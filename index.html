@@ -38,7 +38,7 @@
       </center>
     </div>
     <button class="btn green" onclick="window.location.href='https://whatsapp.com/channel/0029Vb5NPjpBA1esfYHPxF2r'" id="btn">Saluran/Channel Whatsapp</button>
-    <button class="btn green" onclick="window.location.href='https://chat.whatsapp.com/GWL7UKdxeSXFtLBfwefS2A?mode=ac_t'" id="btn5">GC HADZZ PROJECT</button>
+    <button class="btn green" onclick="window.location.href='https://whatsapp.com/channel/0029Vb5dHllEawdjAfrosZ3N'" id="btn5">Saluran Informasi APK</button>
     <button class="btn" onclick="window.location.href='https://vm.tiktok.com/ZSSrnrCtb/'" id="btn1">TikTok</button>
     <button class="btn" onclick="window.location.href='https://www.instagram.com/hadzzmcc?igsh=YzljYTk1ODg3Zg=='" id="btn2">Instagram</button>
     <button class="btn" onclick="window.location.href='https://www.youtube.com/@HadzzCraft'" id="btn3">Youtube</button>
@@ -48,15 +48,77 @@
   <div class="space"></div>
   <br><br><br>
   <div class="bottom-nav">
-    <button class="navbar" id="menuBtn" >☰<br>Menu</button>
     <button class="navbar" onclick="beranda()" id="menubtn1">🏠<br>Beranda</button>
     <button class="navbar" onclick="addon()" id="menubtn2">🚀<br>DLC</button>
   </div>
+
+  <div id="overlay">
+<div id="popup">
+    <h2>Selamat Datang!</h2>
+    <p>Ikuti channel WhatsApp aku untuk update konten Minecraft terbaru!</p>
+    <button class="download-btn" onclick="window.location.href='https://whatsapp.com/channel/0029Vb5dHllEawdjAfrosZ3N'">Follow</button>
+    <button class="download-btn" onclick="tutup()">Close</button>
+  </div>
+</div>
   <script src="me.js">
   </script>
   <script src="bb.js">
   </script>
   <style>
+  .download-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #ffdb24;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+  #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    /* Popup box */
+    #popup {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      max-width: 90%;
+      width: 320px;
+      text-align: center;
+      animation: fadeIn 0.4s ease;
+    }
+
+    #popup h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    #popup p {
+      color: #555;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 400px) {
+      #popup {
+        width: 90%;
+      }
+    }
   body {
   margin: 0;
   font-family: sans-serif;
@@ -67,11 +129,12 @@
   height: 94vh;
 }
 .navbar {
+  display: inline-block;
   background-color: #333;
   border: none;
   color: white;
   font-weight: 700;
-  z-index: 2000;
+  z-index: 900;
 }
 .space {
   padding-bottom: 20px;
@@ -228,7 +291,7 @@ function yaya() {
 }
 function closepopup() {
   const input = document.getElementById("sandi").value;
-  const sandi = "ks9dh0c";
+  const sandi = "12345";
   if (input === sandi) {
   popup.classList.remove("show");
   
@@ -284,6 +347,15 @@ function beranda() {
 function addon() {
   window.location.href = "https://58s0kj02s.github.io/4czla9wp5/";
 }
+  const overlay = document.getElementById("overlay");
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
+  function tutup() {
+    document.getElementById("overlay").style.display = "none";
+  }
 </script>
 </body>
 </html>
